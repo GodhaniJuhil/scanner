@@ -2,7 +2,7 @@ name: Build iOS App
 
 on:
   push:
-    branches: [ main ] # athva tamaru default branch naam (master)
+    branches: [ main ] # Tamaro branch name 'main' ke 'master' check kari lejo
 
 jobs:
   build:
@@ -18,5 +18,8 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
+    - name: Make gradlew executable
+      run: chmod +x gradlew
+
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew build --continue
