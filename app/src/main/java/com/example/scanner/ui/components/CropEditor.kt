@@ -64,7 +64,7 @@ fun CropEditor(
     val currentQuad by rememberUpdatedState(quad)
     val currentOnChange by rememberUpdatedState(onQuadChange)
     // Index of the corner being dragged (0=TL, 1=TR, 2=BR, 3=BL), or -1. Read while drawing the loupe.
-    var activeCorner by mutableIntStateOf(-1)
+    var activeCorner by remember { mutableIntStateOf(-1) }
 
     BoxWithConstraints(modifier = modifier, contentAlignment = Alignment.Center) {
         // Where the image lands inside this box (it is drawn with ContentScale.Fit, centred).
